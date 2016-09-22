@@ -3,20 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>transclude及ng-transclude | __祝强..</title>
+  <title>JSONP&amp;ajax | __祝强..</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="transclude？嵌入的意思,也就是说你是否需要将你的指令（内部）的元素嵌入到你的（模板）中去，默认为false。如果你需要的话，那么就需要将transclude设置为true。如果将这个值设置为true的话，就要配合angular的ng-transclude指令来进行使用。 代码实现？html中的代码">
-<meta name="keywords" content="transclude,ng-transclude">
+  <meta name="description" content="转载版权声明：转载自 http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html 博客园 先说说JSONP是怎么产生的： 其实网上关于JSONP的讲解有很多，但却千篇一律，而且云里雾里，对于很多刚接触的人来讲理解起来有些困难，小可不才，试着用自己的方式来阐释一下这个问题，看看是否有帮助。">
+<meta name="keywords" content="jsonp,ajax">
 <meta property="og:type" content="article">
-<meta property="og:title" content="transclude及ng-transclude">
-<meta property="og:url" content="http://yoursite.com/2016/11/08/angularjs中的transclude及ng-transclude指令/index.html">
+<meta property="og:title" content="JSONP&amp;ajax">
+<meta property="og:url" content="http://yoursite.com/2016/12/09/jsonp&ajax/index.html">
 <meta property="og:site_name" content="__祝强..">
-<meta property="og:description" content="transclude？嵌入的意思,也就是说你是否需要将你的指令（内部）的元素嵌入到你的（模板）中去，默认为false。如果你需要的话，那么就需要将transclude设置为true。如果将这个值设置为true的话，就要配合angular的ng-transclude指令来进行使用。 代码实现？html中的代码">
+<meta property="og:description" content="转载版权声明：转载自 http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html 博客园 先说说JSONP是怎么产生的： 其实网上关于JSONP的讲解有很多，但却千篇一律，而且云里雾里，对于很多刚接触的人来讲理解起来有些困难，小可不才，试着用自己的方式来阐释一下这个问题，看看是否有帮助。">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2016-11-07T16:05:30.239Z">
+<meta property="og:updated_time" content="2016-12-10T16:32:18.890Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="transclude及ng-transclude">
-<meta name="twitter:description" content="transclude？嵌入的意思,也就是说你是否需要将你的指令（内部）的元素嵌入到你的（模板）中去，默认为false。如果你需要的话，那么就需要将transclude设置为true。如果将这个值设置为true的话，就要配合angular的ng-transclude指令来进行使用。 代码实现？html中的代码">
+<meta name="twitter:title" content="JSONP&amp;ajax">
+<meta name="twitter:description" content="转载版权声明：转载自 http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html 博客园 先说说JSONP是怎么产生的： 其实网上关于JSONP的讲解有很多，但却千篇一律，而且云里雾里，对于很多刚接触的人来讲理解起来有些困难，小可不才，试着用自己的方式来阐释一下这个问题，看看是否有帮助。">
   
     <link rel="alternative" href="/atom.xml" title="__祝强.." type="application/atom+xml">
   
@@ -242,11 +242,11 @@
         </header>                
     </div>
 </nav>
-      <div class="body-wrap"><article id="post-angularjs中的transclude及ng-transclude指令" class="article article-type-post" itemscope itemprop="blogPost">
+      <div class="body-wrap"><article id="post-jsonp&amp;ajax" class="article article-type-post" itemscope itemprop="blogPost">
   
     <div class="article-meta">
-      <a href="/2016/11/08/angularjs中的transclude及ng-transclude指令/" class="article-date">
-      <time datetime="2016-11-08T14:51:58.000Z" itemprop="datePublished">2016-11-08</time>
+      <a href="/2016/12/09/jsonp&ajax/" class="article-date">
+      <time datetime="2016-12-09T14:51:58.000Z" itemprop="datePublished">2016-12-09</time>
 </a>
     </div>
   
@@ -259,7 +259,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      transclude及ng-transclude
+      JSONP&amp;ajax
     </h1>
   
 
@@ -274,7 +274,7 @@
 
         
     <div class="article-tag tagcloud">
-        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ng-transclude/">ng-transclude</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/transclude/">transclude</a></li></ul>
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ajax/">ajax</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li></ul>
     </div>
 
         <div class="clearfix"></div>
@@ -284,14 +284,51 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <h2 id="transclude？"><a href="#transclude？" class="headerlink" title="transclude？"></a>transclude？</h2><p>嵌入的意思,也就是说你是否需要将你的指令（内部）的元素嵌入到你的（模板）中去，默认为false。如果你需要的话，那么就需要将transclude设置为true。如果将这个值设置为true的话，就要配合angular的ng-transclude指令来进行使用。</p>
-<h2 id="代码实现？"><a href="#代码实现？" class="headerlink" title="代码实现？"></a>代码实现？</h2><h3 id="html中的代码"><a href="#html中的代码" class="headerlink" title="html中的代码"></a>html中的代码</h3><a id="more"></a>
+        <blockquote>
+<p>转载<br>版权声明：转载自 <a href="http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html" target="_blank" rel="external">http://www.cnblogs.com/dowinning/archive/2012/04/19/json-jsonp-jquery.html</a> 博客园</p>
+<h2 id="先说说JSONP是怎么产生的："><a href="#先说说JSONP是怎么产生的：" class="headerlink" title="先说说JSONP是怎么产生的："></a>先说说JSONP是怎么产生的：</h2></blockquote>
+<p>其实网上关于JSONP的讲解有很多，但却千篇一律，而且云里雾里，对于很多刚接触的人来讲理解起来有些困难，小可不才，试着用自己的方式来阐释一下这个问题，看看是否有帮助。</p>
+<a id="more"></a>
 <the rest="" of="" contents="" |="" 余下全文="">
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">&lt;!--  指令a-transclude 内部含有元素--&gt;</div><div class="line">&lt;breadcrumb&gt;指令（内部）内容&lt;/breadcrumb&gt;</div></pre></td></tr></table></figure>
-<h3 id="js中的代码"><a href="#js中的代码" class="headerlink" title="js中的代码"></a>js中的代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">myApp.directive(&apos;breadcrumb&apos;, [&apos;$parse&apos;, function($parse) &#123;</div><div class="line">	return &#123;</div><div class="line">		templateUrl: &apos;tmpls/breadcrumb.html&apos;,</div><div class="line">        transclude:true</div><div class="line">	&#125;</div><div class="line">&#125;]);</div></pre></td></tr></table></figure>
-<h3 id="tmpls-breadcrumb-html模板中的代码"><a href="#tmpls-breadcrumb-html模板中的代码" class="headerlink" title="tmpls/breadcrumb.html模板中的代码"></a>tmpls/breadcrumb.html模板中的代码</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">&lt;ol&gt;</div><div class="line">  &lt;li&gt;</div><div class="line">  	&lt;a href=&quot;#&quot; ng-transclude&gt;模板1&lt;/a&gt;</div><div class="line">  	&lt;a href=&quot;#&quot;&gt;模板2&lt;/a&gt;</div><div class="line">  &lt;/li&gt;</div><div class="line">&lt;/ol&gt;</div></pre></td></tr></table></figure>
-<p>备注：<strong><em> 模板由两部分组成，一部分是含有ng-transclude指令的，一部分是不含有这个指令的 </em></strong></p>
+<p>1、一个众所周知的问题，Ajax直接请求普通文件存在跨域无权限访问的问题，甭管你是静态页面、动态网页、web服务、WCF，只要是跨域请求，一律不准；</p>
+<p>2、不过我们又发现，Web页面上调用js文件时则不受是否跨域的影响（不仅如此，我们还发现凡是拥有”src”这个属性的标签都拥有跨域的能力，比如script、img、iframe标签）；</p>
+<p>3、于是可以判断，当前阶段如果想通过纯web端（ActiveX控件、服务端代理、属于未来的HTML5之Websocket等方式不算）跨域访问数据就只有一种可能，那就是在远程服务器上设法把数据装进js格式的文件里，供客户端调用和进一步处理；</p>
+<p>4、恰巧我们已经知道有一种叫做JSON的纯字符数据格式可以简洁的描述复杂数据，更妙的是JSON还被js原生支持，所以在客户端几乎可以随心所欲的处理这种格式的数据；</p>
+<p>5、这样子解决方案就呼之欲出了，web客户端通过与调用脚本一模一样的方式，来调用跨域服务器上动态生成的js格式文件（一般以JSON为后缀），显而易见，服务器之所以要动态生成JSON文件，目的就在于把客户端需要的数据装入进去。</p>
+<p>6、客户端在对JSON文件调用成功之后，也就获得了自己所需的数据，剩下的就是按照自己需求进行处理和展现了，这种获取远程数据的方式看起来非常像AJAX，但其实并不一样。</p>
+<p>7、为了便于客户端使用数据，逐渐形成了一种非正式传输协议，人们把它称作JSONP，该协议的一个要点就是允许用户传递一个callback参数给服务端，然后服务端返回数据时会将这个callback参数作为函数名来包裹住JSON数据，这样客户端就可以随意定制自己的函数来自动处理返回数据了。</p>
+<p>如果对于callback参数如何使用还有些模糊的话，我们后面会有具体的实例来讲解。</p>
+<hr>
+<h3 id="JSONP的客户端具体实现："><a href="#JSONP的客户端具体实现：" class="headerlink" title="JSONP的客户端具体实现："></a>JSONP的客户端具体实现：</h3><p>不管jQuery也好，extjs也罢，又或者是其他支持jsonp的框架，他们幕后所做的工作都是一样的，下面我来循序渐进的说明一下jsonp在客户端的实现：</p>
+<p>1、我们知道，哪怕跨域js文件中的代码（当然指符合web脚本安全策略的），web页面也是可以无条件执行的。</p>
+<p>远程服务器remoteserver.com根目录下有个remote.js文件代码如下：</p>
+<p>alert(‘我是远程文件’);<br>本地服务器localserver.com下有个jsonp.html页面代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://remoteserver.com/remote.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>毫无疑问，页面将会弹出一个提示窗体，显示跨域调用成功。</p>
+<p>2、现在我们在jsonp.html页面定义一个函数，然后在远程remote.js中传入数据进行调用。</p>
+<p>jsonp.html页面代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">var localHandler = function(data)&#123;</div><div class="line">    alert(&apos;我是本地函数，可以被跨域的remote.js文件调用，远程js带来的数据是：&apos; + data.result);</div><div class="line">&#125;;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;script type=&quot;text/javascript&quot; src=&quot;http://remoteserver.com/remote.js&quot;&gt;&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>remote.js文件代码如下：</p>
+<p>localHandler({“result”:”我是远程js带来的数据”});<br>运行之后查看结果，页面成功弹出提示窗口，显示本地函数被跨域的远程js调用成功，并且还接收到了远程js带来的数据。很欣喜，跨域远程获取数据的目的基本实现了，但是又一个问题出现了，我怎么让远程js知道它应该调用的本地函数叫什么名字呢？毕竟是jsonp的服务者都要面对很多服务对象，而这些服务对象各自的本地函数都不相同啊？我们接着往下看。</p>
+<p>3、聪明的开发者很容易想到，只要服务端提供的js脚本是动态生成的就行了呗，这样调用者可以传一个参数过去告诉服务端“我想要一段调用XXX函数的js代码，请你返回给我”，于是服务器就可以按照客户端的需求来生成js脚本并响应了。</p>
+<p>看jsonp.html页面的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"></div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">// 得到航班信息查询结果后的回调函数</div><div class="line">var flightHandler = function(data)&#123;</div><div class="line">    alert(&apos;你查询的航班结果是：票价 &apos; + data.price + &apos; 元，&apos; + &apos;余票 &apos; + data.tickets + &apos; 张。&apos;);</div><div class="line">&#125;;</div><div class="line">// 提供jsonp服务的url地址（不管是什么类型的地址，最终生成的返回值都是一段javascript代码）</div><div class="line">var url = &quot;http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998&amp;callback=flightHandler&quot;;</div><div class="line">// 创建script标签，设置其属性</div><div class="line">var script = document.createElement(&apos;script&apos;);</div><div class="line">script.setAttribute(&apos;src&apos;, url);</div><div class="line">// 把script标签加入head，此时调用开始</div><div class="line">document.getElementsByTagName(&apos;head&apos;)[0].appendChild(script); </div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>这次的代码变化比较大，不再直接把远程js文件写死，而是编码实现动态查询，而这也正是jsonp客户端实现的核心部分，本例中的重点也就在于如何完成jsonp调用的全过程。</p>
+<p>我们看到调用的url中传递了一个code参数，告诉服务器我要查的是CA1998次航班的信息，而callback参数则告诉服务器，我的本地回调函数叫做flightHandler，所以请把查询结果传入这个函数中进行调用。</p>
+<p>OK，服务器很聪明，这个叫做flightResult.aspx的页面生成了一段这样的代码提供给jsonp.html（服务端的实现这里就不演示了，与你选用的语言无关，说到底就是拼接字符串）：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">flightHandler(&#123;</div><div class="line">    &quot;code&quot;: &quot;CA1998&quot;,</div><div class="line">    &quot;price&quot;: 1780,</div><div class="line">    &quot;tickets&quot;: 5</div><div class="line">&#125;);</div></pre></td></tr></table></figure></p>
+<p>我们看到，传递给flightHandler函数的是一个json，它描述了航班的基本信息。运行一下页面，成功弹出提示窗口，jsonp的执行全过程顺利完成！</p>
+<p>4、到这里为止的话，相信你已经能够理解jsonp的客户端实现原理了吧？剩下的就是如何把代码封装一下，以便于与用户界面交互，从而实现多次和重复调用。</p>
+<p>什么？你用的是jQuery，想知道jQuery如何实现jsonp调用？好吧，那我就好人做到底，再给你一段jQuery使用jsonp的代码（我们依然沿用上面那个航班信息查询的例子，假定返回jsonp结果不变）：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div></pre></td><td class="code"><pre><div class="line"> &lt;script type=&quot;text/javascript&quot; src=jquery.min.js&quot;&gt;&lt;/script&gt;</div><div class="line"> &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">jQuery(document).ready(function()&#123; </div><div class="line">   $.ajax(&#123;</div><div class="line">        type: &quot;get&quot;,</div><div class="line">        async: false,</div><div class="line">        url: &quot;http://flightQuery.com/jsonp/flightResult.aspx?code=CA1998&quot;,</div><div class="line">        dataType: &quot;jsonp&quot;,</div><div class="line">        jsonp: &quot;callback&quot;,//传递给请求处理程序或页面的，用以获得jsonp回调函数名的参数名(一般默认为:callback)</div><div class="line">        jsonpCallback:&quot;flightHandler&quot;,//自定义的jsonp回调函数名称，默认为jQuery自动生成的随机函数名，也可以写&quot;?&quot;，jQuery会自动为你处理数据</div><div class="line">        success: function(json)&#123;</div><div class="line">            alert(&apos;您查询到航班信息：票价： &apos; + json.price + &apos; 元，余票： &apos; + json.tickets + &apos; 张。&apos;);</div><div class="line">        &#125;,</div><div class="line">        error: function()&#123;</div><div class="line">            alert(&apos;fail&apos;);</div><div class="line">        &#125;</div><div class="line">    &#125;);</div><div class="line">&#125;);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<p>是不是有点奇怪？为什么我这次没有写flightHandler这个函数呢？而且竟然也运行成功了！哈哈，这就是jQuery的功劳了，jquery在处理jsonp类型的ajax时（还是忍不住吐槽，虽然jquery也把jsonp归入了ajax，但其实它们真的不是一回事儿），自动帮你生成回调函数并把数据取出来供success属性方法来调用，是不是很爽呀？</p>
+<hr>
+<p>对ajax与jsonp的异同再做一些补充说明：</p>
+<p>1、ajax和jsonp这两种技术在调用方式上“看起来”很像，目的也一样，都是请求一个url，然后把服务器返回的数据进行处理，因此jquery和ext等框架都把jsonp作为ajax的一种形式进行了封装；</p>
+<p>2、但ajax和jsonp其实本质上是不同的东西。ajax的核心是通过XmlHttpRequest获取非本页内容，而jsonp的核心则是动态添加script标签来调用服务器提供的js脚本。</p>
+<p>3、所以说，其实ajax与jsonp的区别不在于是否跨域，ajax通过服务端代理一样可以实现跨域，jsonp本身也不排斥同域的数据的获取。</p>
+<p>4、还有就是，jsonp是一种方式或者说非强制性协议，如同ajax一样，它也不一定非要用json格式来传递数据，如果你愿意，字符串都行，只不过这样不利于用jsonp提供公开服务。</p>
+<p>总而言之，jsonp不是ajax的一个特例，哪怕jquery等巨头把jsonp封装进了ajax，也不能改变着一点！</p>
 </the>
       
       
@@ -347,13 +384,13 @@
   
     
     <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/11/08/angularjs中的transclude及ng-transclude指令/">transclude及ng-transclude</a></p>
+        <p><span>本文标题:</span><a href="/2016/12/09/jsonp&ajax/">JSONP&amp;ajax</a></p>
         <p><span>文章作者:</span><a href="/" title="访问 UQqiang 的个人博客">UQqiang</a></p>
-        <p><span>发布时间:</span>2016年11月08日 - 22时51分</p>
-        <p><span>最后更新:</span>2016年11月08日 - 00时05分</p>
+        <p><span>发布时间:</span>2016年12月09日 - 22时51分</p>
+        <p><span>最后更新:</span>2016年12月11日 - 00时32分</p>
         <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/11/08/angularjs中的transclude及ng-transclude指令/" title="transclude及ng-transclude">http://yoursite.com/2016/11/08/angularjs中的transclude及ng-transclude指令/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/08/angularjs中的transclude及ng-transclude指令/　　作者: UQqiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <span>原始链接:</span><a class="post-url" href="/2016/12/09/jsonp&ajax/" title="JSONP&amp;ajax">http://yoursite.com/2016/12/09/jsonp&amp;ajax/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/12/09/jsonp&amp;ajax/　　作者: UQqiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
             <script src="/js/clipboard.min.js"></script>
             <script> var clipboard = new Clipboard('.copy-path'); </script>
         </p>
@@ -366,18 +403,18 @@
 
 <nav id="article-nav">
   
-    <a href="/2016/11/15/逻辑运算符/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2017/01/06/webpack相关/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption"><</strong>
       <div class="article-nav-title">
         
-          JS逻辑运算符&amp;&amp;与||的短路运算
+          webpack相关
         
       </div>
     </a>
   
   
-    <a href="/2016/11/02/键盘事件/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">键盘事件</div>
+    <a href="/2016/11/21/jQ中的集合/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">jQ中的集合</div>
       <strong class="article-nav-caption">></strong>
     </a>
   
@@ -388,7 +425,7 @@
 
     <div id="toc" class="toc-article">
     <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#transclude？"><span class="toc-number">1.</span> <span class="toc-text">transclude？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码实现？"><span class="toc-number">2.</span> <span class="toc-text">代码实现？</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#html中的代码"><span class="toc-number">2.1.</span> <span class="toc-text">html中的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#js中的代码"><span class="toc-number">2.2.</span> <span class="toc-text">js中的代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tmpls-breadcrumb-html模板中的代码"><span class="toc-number">2.3.</span> <span class="toc-text">tmpls/breadcrumb.html模板中的代码</span></a></li></ol></li></ol>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#先说说JSONP是怎么产生的："><span class="toc-number">1.</span> <span class="toc-text">先说说JSONP是怎么产生的：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#JSONP的客户端具体实现："><span class="toc-number">1.1.</span> <span class="toc-text">JSONP的客户端具体实现：</span></a></li></ol></li></ol>
 </div>
 <input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
 
@@ -454,13 +491,13 @@
 
     <div class="scroll" id="post-nav-button">
         
-            <a href="/2016/11/15/逻辑运算符/" title="上一篇: JS逻辑运算符&amp;&amp;与||的短路运算">
+            <a href="/2017/01/06/webpack相关/" title="上一篇: webpack相关">
                 <i class="fa fa-angle-left"></i>
             </a>
         
         <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
         
-            <a href="/2016/11/02/键盘事件/" title="下一篇: 键盘事件">
+            <a href="/2016/11/21/jQ中的集合/" title="下一篇: jQ中的集合">
                 <i class="fa fa-angle-right"></i>
             </a>
         

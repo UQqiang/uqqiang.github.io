@@ -253,7 +253,6 @@ a {
 #container .left-col {
   background: url("../img/bg.jpg") #515457;
   width: 300px;
-  border: 1px solid #ff0;
   position: fixed;
   right: 2px;
   opacity: 1;
@@ -306,6 +305,7 @@ a {
   position: fixed;
   right: 232px;
   left: auto;
+  outline: none;
 }
 @media screen and (max-width: 800px) {
   #container .left-col {
