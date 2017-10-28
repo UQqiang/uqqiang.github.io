@@ -1,0 +1,625 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>前端工具小总结 | __祝强..</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天总结几个前端开发所用到的工具区别，以备后用.主要内容为：   npm与bower的区别？ svn与git的区别？ 分布式和集群？（后台架构的知识） gulp与grunt? gulp与webpack?   npm与bower的区别？我认为的npm和bower其实并没有太大的区别，硬要说的话，我是这么理解这两个工具的：">
+<meta name="keywords" content="gulp,webpack,npm">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端工具小总结">
+<meta property="og:url" content="http://yoursite.com/2016/11/08/前端工具/index.html">
+<meta property="og:site_name" content="__祝强..">
+<meta property="og:description" content="今天总结几个前端开发所用到的工具区别，以备后用.主要内容为：   npm与bower的区别？ svn与git的区别？ 分布式和集群？（后台架构的知识） gulp与grunt? gulp与webpack?   npm与bower的区别？我认为的npm和bower其实并没有太大的区别，硬要说的话，我是这么理解这两个工具的：">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-20T03:10:00.602Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端工具小总结">
+<meta name="twitter:description" content="今天总结几个前端开发所用到的工具区别，以备后用.主要内容为：   npm与bower的区别？ svn与git的区别？ 分布式和集群？（后台架构的知识） gulp与grunt? gulp与webpack?   npm与bower的区别？我认为的npm和bower其实并没有太大的区别，硬要说的话，我是这么理解这两个工具的：">
+  
+    <link rel="alternative" href="/atom.xml" title="__祝强.." type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">UQqiang</a></h1>
+        </hgroup>
+
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">所有文章</a></li>
+                        
+                            <li><a href="/about">about Me</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:646386477@qq.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/UQqiang" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com" title="weibo">weibo</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/animate/" style="font-size: 10px;">animate</a> <a href="/tags/each/" style="font-size: 10px;">each()</a> <a href="/tags/gulp/" style="font-size: 20px;">gulp</a> <a href="/tags/javac/" style="font-size: 10px;">javac</a> <a href="/tags/jsonp/" style="font-size: 10px;">jsonp</a> <a href="/tags/keydown/" style="font-size: 10px;">keydown</a> <a href="/tags/keypress/" style="font-size: 10px;">keypress</a> <a href="/tags/keyup/" style="font-size: 10px;">keyup</a> <a href="/tags/map/" style="font-size: 10px;">map()</a> <a href="/tags/ng-transclude/" style="font-size: 10px;">ng-transclude</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/textInput/" style="font-size: 10px;">textInput</a> <a href="/tags/transclude/" style="font-size: 10px;">transclude</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/封装/" style="font-size: 10px;">封装</a> <a href="/tags/逻辑运算/" style="font-size: 10px;">逻辑运算</a> <a href="/tags/阮一峰/" style="font-size: 10px;">阮一峰</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://toutiao.io/">开发者头条</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://wuchong.me">Jark&#39;s Blog</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/onepeace/">博客园</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">执着并快乐着。。。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">UQqiang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">UQqiang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">所有文章</a></li>
+                
+                    <li><a href="/about">about Me</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:646386477@qq.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/UQqiang" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com" title="weibo">weibo</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-前端工具" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/11/08/前端工具/" class="article-date">
+      <time datetime="2016-11-08T14:41:28.000Z" itemprop="datePublished">2016-11-08</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      前端工具小总结
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/gulp/">gulp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/npm/">npm</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>今天总结几个前端开发所用到的工具区别，以备后用.<br>主要内容为：</p>
+<blockquote>
+<ul>
+<li>npm与bower的区别？</li>
+<li>svn与git的区别？</li>
+<li>分布式和集群？（后台架构的知识）</li>
+<li>gulp与grunt?</li>
+<li>gulp与webpack?</li>
+</ul>
+</blockquote>
+<h2 id="npm与bower的区别？"><a href="#npm与bower的区别？" class="headerlink" title="npm与bower的区别？"></a>npm与bower的区别？</h2><pre><code>我认为的npm和bower其实并没有太大的区别，硬要说的话，我是这么理解这两个工具的：
+</code></pre><a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+<pre><code>1. Bower大部分是用来下载前端开发工具，比如CSS、JS插件库等内容进行依赖管理，依赖的下载目录结构可以自定义。NPM主要运用于Node.js项目的内部依赖包管理，安装的模块位于项目根目录下的node_modules文件夹内。
+2. 现在看来，npm已基本取代bower，bower已经出局。
+</code></pre><h2 id="svn与git的区别？"><a href="#svn与git的区别？" class="headerlink" title="svn与git的区别？"></a>svn与git的区别？</h2><pre><code>1. git是分布式的，SVN不是。
+2. git把内容按元数据方式存储，而SVN是按文件
+3. git下载下来后，在离线状态下可以看到所有的Log版本。而SVN需要联网，而且需要先updata一下，忘记就徒增麻烦了。
+(git的特点版本控制可以不依赖网络做任何事情，对分支和合并有更好的支持)
+4. git的内容的完整性要优于SVN:git的内容存储使用的是SHA-1哈希算法(不太熟悉)，但是我知道它能够确保代码内容的完整性，确保在遇到磁盘故障和网络问题时降低对版本库的破坏。
+</code></pre><h2 id="分布式和集群？"><a href="#分布式和集群？" class="headerlink" title="分布式和集群？"></a>分布式和集群？</h2><ol>
+<li>分布式：一个业务分拆多个子业务，部署在不同的服务器上（比如腾讯QQ是一个总体业务，它可以分出想聊天、视频等等子业务，把这些子业务放在了不同的服务器上，所以每个服务器的业务都不同。来便于维护和管理）</li>
+<li>集群：同一个业务，部署在多个服务器上（比如腾讯QQ的聊天业务，不可能只凡在一个服务器上，否则用户那么多，它自己吃不消，他又将该业务部署在了不同的服务器上，而这些服务器实现的业务都是聊天。缓和服务器压力）<h2 id="gulp与grunt"><a href="#gulp与grunt" class="headerlink" title="gulp与grunt?"></a>gulp与grunt?</h2>1.gulp的语法比grunt语法简洁，用gulp官网的话说，这个叫做“代码优于配置”<br>2.gulp构建项目的时间速度快，通过利用Node.js强大的流，不需要往磁盘写中间文件，可以更快地完成构建。<h2 id="gulp与webpack"><a href="#gulp与webpack" class="headerlink" title="gulp与webpack?"></a>gulp与webpack?</h2> webpack的优点：<br>  1.不用考虑资源位置， webpack 给你做了。<br>  2.不用考虑资源加载方式，异步同步改一下写法就行， webpack 也给你做了。<br>  3.不用考虑 common 资源的整理， webpack 有个 CommonsChunkPlugin 能做。<br> 备注：在 webpack 里，你只需要 require 就行了，依赖关系 webpack 帮你处理。而在 gulp 里，你还是需要把所有的 js 或者其他依赖文件用 gulp.src 弄起来。</li>
+</ol>
+</the>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/11/08/前端工具/">前端工具小总结</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 UQqiang 的个人博客">UQqiang</a></p>
+        <p><span>发布时间:</span>2016年11月08日 - 22时41分</p>
+        <p><span>最后更新:</span>2017年10月20日 - 11时10分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/11/08/前端工具/" title="前端工具小总结">http://yoursite.com/2016/11/08/前端工具/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/11/08/前端工具/　　作者: UQqiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/11/08/angularjs中的transclude及ng-transclude指令/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          transclude及ng-transclude
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/11/02/键盘事件/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">键盘事件</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#npm与bower的区别？"><span class="toc-number">1.</span> <span class="toc-text">npm与bower的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#svn与git的区别？"><span class="toc-number">2.</span> <span class="toc-text">svn与git的区别？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#分布式和集群？"><span class="toc-number">3.</span> <span class="toc-text">分布式和集群？</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gulp与grunt"><span class="toc-number">4.</span> <span class="toc-text">gulp与grunt?</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#gulp与webpack"><span class="toc-number">5.</span> <span class="toc-text">gulp与webpack?</span></a></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'UQqiang',
+      repo: 'uqqiang.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/11/08/angularjs中的transclude及ng-transclude指令/" title="上一篇: transclude及ng-transclude">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/11/02/键盘事件/" title="下一篇: 键盘事件">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/14/jdk/">关于安装jdk后没有javac文件的小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/webpack搭建/">webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/09/jsonp/">JSONP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/jQ中的集合/">jQ中的集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/逻辑运算符/">JS逻辑运算符&&与||的短路运算</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/angularjs中的transclude及ng-transclude指令/">transclude及ng-transclude</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/前端工具/">前端工具小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/02/键盘事件/">键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/面向对象/">面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/js基础1/">js基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/CSS3/">2D 3D 动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Elements/">Elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/24/gulp搭建/">gulp搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/node安装/">node安装</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 UQqiang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

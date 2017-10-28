@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>node安装 | __祝强..</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="初探一下hexo的流程，以及复习复习之前学习的基础东西，也为了以后自己方便观看和分享学习成果。初学者，基础知识不是太官方。。见谅。。直奔主题。  一、Node简介Node.js是什么？  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。">
+<meta name="keywords" content="node">
+<meta property="og:type" content="article">
+<meta property="og:title" content="node安装">
+<meta property="og:url" content="http://yoursite.com/2016/09/22/node安装/index.html">
+<meta property="og:site_name" content="__祝强..">
+<meta property="og:description" content="初探一下hexo的流程，以及复习复习之前学习的基础东西，也为了以后自己方便观看和分享学习成果。初学者，基础知识不是太官方。。见谅。。直奔主题。  一、Node简介Node.js是什么？  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-20T03:22:04.659Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="node安装">
+<meta name="twitter:description" content="初探一下hexo的流程，以及复习复习之前学习的基础东西，也为了以后自己方便观看和分享学习成果。初学者，基础知识不是太官方。。见谅。。直奔主题。  一、Node简介Node.js是什么？  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。">
+  
+    <link rel="alternative" href="/atom.xml" title="__祝强.." type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">UQqiang</a></h1>
+        </hgroup>
+
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">所有文章</a></li>
+                        
+                            <li><a href="/about">about Me</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:646386477@qq.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/UQqiang" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com" title="weibo">weibo</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/animate/" style="font-size: 10px;">animate</a> <a href="/tags/each/" style="font-size: 10px;">each()</a> <a href="/tags/gulp/" style="font-size: 20px;">gulp</a> <a href="/tags/javac/" style="font-size: 10px;">javac</a> <a href="/tags/jsonp/" style="font-size: 10px;">jsonp</a> <a href="/tags/keydown/" style="font-size: 10px;">keydown</a> <a href="/tags/keypress/" style="font-size: 10px;">keypress</a> <a href="/tags/keyup/" style="font-size: 10px;">keyup</a> <a href="/tags/map/" style="font-size: 10px;">map()</a> <a href="/tags/ng-transclude/" style="font-size: 10px;">ng-transclude</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/textInput/" style="font-size: 10px;">textInput</a> <a href="/tags/transclude/" style="font-size: 10px;">transclude</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/封装/" style="font-size: 10px;">封装</a> <a href="/tags/逻辑运算/" style="font-size: 10px;">逻辑运算</a> <a href="/tags/阮一峰/" style="font-size: 10px;">阮一峰</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://toutiao.io/">开发者头条</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://wuchong.me">Jark&#39;s Blog</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/onepeace/">博客园</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">执着并快乐着。。。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">UQqiang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">UQqiang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">所有文章</a></li>
+                
+                    <li><a href="/about">about Me</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:646386477@qq.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/UQqiang" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com" title="weibo">weibo</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-node安装" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2016/09/22/node安装/" class="article-date">
+      <time datetime="2016-09-22T15:11:31.000Z" itemprop="datePublished">2016-09-22</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      node安装
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>  初探一下hexo的流程，以及复习复习之前学习的基础东西，也为了以后自己方便观看和分享学习成果。初学者，基础知识不是太官方。。见谅。。直奔主题。</p>
+<hr>
+<h2 id="一、Node简介"><a href="#一、Node简介" class="headerlink" title="一、Node简介"></a>一、Node简介</h2><h3 id="Node-js是什么？"><a href="#Node-js是什么？" class="headerlink" title="Node.js是什么？"></a><strong>Node.js是什么？</strong></h3><p>  Node.js 是一个基于 Chrome V8 引擎的 JavaScript 运行环境。</p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+<p>  <strong>注意</strong>：<em>Node.js 的包管理器 npm，是全球最大的开源库生态系统。node中只能运行ECMAScript，无法使用 BOM 和 DOM，也就是说，他只是一个js运行环境。</em></p>
+<h2 id="二、Node简介及安装"><a href="#二、Node简介及安装" class="headerlink" title="二、Node简介及安装"></a>二、Node简介及安装</h2><h3 id="使用nvm安装Node-js"><a href="#使用nvm安装Node-js" class="headerlink" title="使用nvm安装Node.js"></a>使用nvm安装Node.js</h3><p>  Node版本发展很快，版本前后差异性大，全局安装的第三方组件和node版本相关造成全局版本混乱。nvm是解决这一问题的利器。<br>  nvm是node版本管理工具。它的主要特点是：</p>
+<pre><code>* 可安装多版本的node。
+* 灵活切换当前的node版本。
+* 全局安装第三方组件到对应版本的node中。
+</code></pre><p>  <strong><em>ps：</em></strong>nvm 是 Mac 下的 node 管理工具,如果是需要管理 Windows 下的 node，官方推荐是使用 nvmw 或 nvm-windows<br>  <strong>下载 nvm 包 地址：<a href="https://github.com/coreybutler/nvm-windows/releases" target="_blank" rel="external">https://github.com/coreybutler/nvm-windows/releases</a></strong><br>  下载安装nvm这里就不在赘述了(需要注意最好不要将其安装在中文目录下)。<br>  安装 nvm 之前最好先删除下已安装的 node 和全局 node 模块</p>
+<h3 id="配置相关的环境变量"><a href="#配置相关的环境变量" class="headerlink" title="配置相关的环境变量"></a>配置相关的环境变量</h3><ol>
+<li>先使用<em>管理员权限运行**</em>install.cmd**</li>
+<li><p>根目录生成一个<strong><em>settings.txt</em></strong>的文本文件,将其剪切到nvm目录下。<br>然后我们把他修改成这样：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">root: D:\dev\nvm      //这里表示的是当前文件夹路径</div><div class="line">path: D:\dev\nodejs   //这里表示配置后要要生成的目录</div><div class="line">arch: 64              //这里为自己电脑的机器位数</div><div class="line">proxy: none</div></pre></td></tr></table></figure>
+</li>
+<li><p>先<strong><em>配置nvm的环境变量</em></strong>，让其能够在cmd中使用其命令<br>我们还会发现，在Path中也会自动添加上D:\dev\nvm;或者是D:\dev\nodejs，如果有的话，把他们删掉，没有的话更好。<br>（1）先添加：NVM_HOME的变量值为：D:\dev\nvm<br>（2）再在Path的最前面输入： ;%NVM_HOME%;<br>（3）打开一个cmd窗口输入命令：nvm 若看到当前nvm的版本信息。就可以安装nodejs了</p>
+</li>
+<li><p><strong>安装nodejs</strong>并<strong>配置相关环境</strong><br>（1）配置node环境:先添加：NVM_HOME的变量值为：D:\dev\nodejs,再在Path的最前面输入： ;%NVM_SYMLINK%;<br>（2）继续输入命令：nvm install latest 我们会看到正在下载的提示，下载完成后 会让你use那个最新的node版本。<br>（3）如果你是第一次下载，在use之前，D:\dev目录下是没有nodejs这个文件夹的，在输入比如： nvm use 5.11.0之后，你会发现，D:\dev目录下多了一个nodejs文件夹，这个文件夹不是单纯的文件夹，它是一个快捷方式，指向了 D:\dev\nvm 里的 v5.11.0 文件夹。<br>（4）同样的咱们可以下载其他版本的nodejs，这样通过命令:nvm use 版本号 比如：nvm use 5.11.0就可以轻松实现版本切换了。<br><strong>备注</strong>： 如果你的电脑系统是32位的，那么在下载nodejs版本的时候，一定要指明 32 如： nvm install 5.11.0 32这样在32位的电脑系统中，才可以使用，默认是64位的。</p>
+</li>
+<li><p><strong><em>安装npm及相关指令</em></strong><br><strong>备注</strong>：在每个版本的nodejs中，都会自带npm，为了统一起见，我们安装一个全局的npm工具，这个操作很有必要，因为我们需要安装一些全局的其他包,不会因为切换node版本造成原来下载过的包不可用。<br>（1）首先我们进入命令模式,输入 npm config set prefix “D:\dev\nvm\npm” 回车，这是在配置npm的全局安装路径,然后在用户文件夹下会生成一个。npmrc的文件,用记事本打开后可以看到如下内容：prefix=D:\dev\nvm\npm<br>（2）然后继续在命令中输入： npm install npm -g 回车后会发现正在下载npm包,在D:\dev\nvm\npm目录中可以看到下载中的文件,以后我们只要用npm安装包的时候加上 -g 就可以把包安装在我们刚刚配置的全局路径下了。<br>（3）我们为这个npm配置环境变量： 变量名为：NPM_HOME，变量值为 ：D:\dev\nvm\npm在Path的最前面添加;%NPM_HOME%，注意了，这个一定要添加在 %NVM_SYMLINK%之前，所以我们直接把它放到Path的最前面.最后我们新打开一个命令窗口，输入npm -v ,此时我们使用的就是我们统一下载的npm包了。<br>（4）相关指令：<br>初始化：npm init<br>安装： npm install PackageName –save-dev<br>卸载： npm uninstall PackageName –save-dev</p>
+</li>
+</ol>
+</the>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2016/09/22/node安装/">node安装</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 UQqiang 的个人博客">UQqiang</a></p>
+        <p><span>发布时间:</span>2016年09月22日 - 23时11分</p>
+        <p><span>最后更新:</span>2017年10月20日 - 11时22分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2016/09/22/node安装/" title="node安装">http://yoursite.com/2016/09/22/node安装/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2016/09/22/node安装/　　作者: UQqiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2016/09/24/gulp搭建/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          gulp搭建
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#一、Node简介"><span class="toc-number">1.</span> <span class="toc-text">一、Node简介</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Node-js是什么？"><span class="toc-number">1.1.</span> <span class="toc-text">Node.js是什么？</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二、Node简介及安装"><span class="toc-number">2.</span> <span class="toc-text">二、Node简介及安装</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用nvm安装Node-js"><span class="toc-number">2.1.</span> <span class="toc-text">使用nvm安装Node.js</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#配置相关的环境变量"><span class="toc-number">2.2.</span> <span class="toc-text">配置相关的环境变量</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'UQqiang',
+      repo: 'uqqiang.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2016/09/24/gulp搭建/" title="上一篇: gulp搭建">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/" title="回到主页"><i class="fa fa-home"></i></a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/14/jdk/">关于安装jdk后没有javac文件的小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/webpack搭建/">webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/09/jsonp/">JSONP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/jQ中的集合/">jQ中的集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/逻辑运算符/">JS逻辑运算符&&与||的短路运算</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/angularjs中的transclude及ng-transclude指令/">transclude及ng-transclude</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/前端工具/">前端工具小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/02/键盘事件/">键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/面向对象/">面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/js基础1/">js基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/CSS3/">2D 3D 动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Elements/">Elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/24/gulp搭建/">gulp搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/node安装/">node安装</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 UQqiang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>

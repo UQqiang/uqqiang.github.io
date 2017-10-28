@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>webpack | __祝强..</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="今天就回顾一下webpack的搭建，方便自己以后用起来顺手些。  引入webpack依赖 安装全局webpack在一个盘符中创建一个工程，（注意不要放在中文目录，以免不必要的麻烦）然后打开CMD，输入以下命令。">
+<meta name="keywords" content="webpack">
+<meta property="og:type" content="article">
+<meta property="og:title" content="webpack">
+<meta property="og:url" content="http://yoursite.com/2017/01/06/webpack搭建/index.html">
+<meta property="og:site_name" content="__祝强..">
+<meta property="og:description" content="今天就回顾一下webpack的搭建，方便自己以后用起来顺手些。  引入webpack依赖 安装全局webpack在一个盘符中创建一个工程，（注意不要放在中文目录，以免不必要的麻烦）然后打开CMD，输入以下命令。">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-10-20T03:09:47.619Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="webpack">
+<meta name="twitter:description" content="今天就回顾一下webpack的搭建，方便自己以后用起来顺手些。  引入webpack依赖 安装全局webpack在一个盘符中创建一个工程，（注意不要放在中文目录，以免不必要的麻烦）然后打开CMD，输入以下命令。">
+  
+    <link rel="alternative" href="/atom.xml" title="__祝强.." type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/img/favicon.png">
+  
+  
+      <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/font-awesome/css/font-awesome.min.css">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  
+  
+      <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  
+  <!-- 加载特效 -->
+    <script src="/js/pace.js"></script>
+    <link href="/css/pace/pace-theme-flash.css" rel="stylesheet" />
+  <script>
+      var yiliaConfig = {
+          rootUrl: '/',
+          fancybox: true,
+          animate: true,
+          isHome: false,
+          isPost: true,
+          isArchive: false,
+          isTag: false,
+          isCategory: false,
+          open_in_new: false
+      }
+  </script>
+</head>
+<body>
+  <div id="container">
+    <div class="left-col">
+    <div class="overlay"></div>
+<div class="intrude-less">
+    <header id="header" class="inner">
+        <a href="/" class="profilepic">
+            
+            <img lazy-src="/img/head.jpg" class="js-avatar">
+            
+        </a>
+
+        <hgroup>
+          <h1 class="header-author"><a href="/" title="Hi Mate">UQqiang</a></h1>
+        </hgroup>
+
+        
+        
+            <form>
+                <input type="text" class="st-default-search-input search" id="search" placeholder=" Search...">
+            </form>
+        
+        
+            <div id="switch-btn" class="switch-btn">
+                <div class="icon">
+                    <div class="icon-ctn">
+                        <div class="icon-wrap icon-house" data-idx="0">
+                            <div class="birdhouse"></div>
+                            <div class="birdhouse_holes"></div>
+                        </div>
+                        <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                            <div class="ribbon"></div>
+                        </div>
+                        
+                        <div class="icon-wrap icon-link hide" data-idx="2">
+                            <div class="loopback_l"></div>
+                            <div class="loopback_r"></div>
+                        </div>
+                        
+                        
+                        <div class="icon-wrap icon-me hide" data-idx="3">
+                            <div class="user"></div>
+                            <div class="shoulder"></div>
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                <div class="tips-box hide">
+                    <div class="tips-arrow"></div>
+                    <ul class="tips-inner">
+                        <li>菜单</li>
+                        <li>标签</li>
+                        
+                        <li>友情链接</li>
+                        
+                        
+                        <li>关于我</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        
+
+        <div id="switch-area" class="switch-area">
+            <div class="switch-wrap">
+                <section class="switch-part switch-part1">
+                    <nav class="header-menu">
+                        <ul>
+                        
+                            <li><a href="/">博客首页</a></li>
+                        
+                            <li><a href="/archives">所有文章</a></li>
+                        
+                            <li><a href="/about">about Me</a></li>
+                        
+                            <li><a href="/FrontEndGuide">前端导航</a></li>
+                        
+                        </ul>
+                    </nav>
+                    <nav class="header-nav">
+                        <ul class="social">
+                            
+                                <a class="fl mail" target="_blank" href="mailto:646386477@qq.com" title="mail">mail</a>
+                            
+                                <a class="fl github" target="_blank" href="https://github.com/UQqiang" title="github">github</a>
+                            
+                                <a class="fl weibo" target="_blank" href="http://weibo.com" title="weibo">weibo</a>
+                            
+                                <a class="fl zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                            
+                                <a class="fl google" target="_blank" href="#" title="google">google</a>
+                            
+                                <a class="fl twitter" target="_blank" href="#" title="twitter">twitter</a>
+                            
+                                <a class="fl linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                            
+                                <a class="fl rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                            
+                        </ul>
+                    </nav>
+                </section>
+                
+                
+                <section class="switch-part switch-part2">
+                    <div class="widget tagcloud" id="js-tagcloud">
+                        <a href="/tags/3D/" style="font-size: 10px;">3D</a> <a href="/tags/JDK/" style="font-size: 10px;">JDK</a> <a href="/tags/ajax/" style="font-size: 10px;">ajax</a> <a href="/tags/animate/" style="font-size: 10px;">animate</a> <a href="/tags/each/" style="font-size: 10px;">each()</a> <a href="/tags/gulp/" style="font-size: 20px;">gulp</a> <a href="/tags/javac/" style="font-size: 10px;">javac</a> <a href="/tags/jsonp/" style="font-size: 10px;">jsonp</a> <a href="/tags/keydown/" style="font-size: 10px;">keydown</a> <a href="/tags/keypress/" style="font-size: 10px;">keypress</a> <a href="/tags/keyup/" style="font-size: 10px;">keyup</a> <a href="/tags/map/" style="font-size: 10px;">map()</a> <a href="/tags/ng-transclude/" style="font-size: 10px;">ng-transclude</a> <a href="/tags/node/" style="font-size: 10px;">node</a> <a href="/tags/npm/" style="font-size: 10px;">npm</a> <a href="/tags/textInput/" style="font-size: 10px;">textInput</a> <a href="/tags/transclude/" style="font-size: 10px;">transclude</a> <a href="/tags/webpack/" style="font-size: 20px;">webpack</a> <a href="/tags/封装/" style="font-size: 10px;">封装</a> <a href="/tags/逻辑运算/" style="font-size: 10px;">逻辑运算</a> <a href="/tags/阮一峰/" style="font-size: 10px;">阮一峰</a>
+                    </div>
+                </section>
+                
+                
+                
+                <section class="switch-part switch-part3">
+                    <div id="js-friends">
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://toutiao.io/">开发者头条</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://wuchong.me">Jark&#39;s Blog</a>
+                    
+                      <a target="_blank" class="main-nav-link switch-friends-link" href="http://www.cnblogs.com/onepeace/">博客园</a>
+                    
+                    </div>
+                </section>
+                
+
+                
+                
+                <section class="switch-part switch-part4">
+                
+                    <div id="js-aboutme">执着并快乐着。。。</div>
+                </section>
+                
+            </div>
+        </div>
+    </header>                
+</div>
+    </div>
+    <div class="mid-col">
+      <nav id="mobile-nav">
+      <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide"><a href="/" title="Me">UQqiang</a></h1>
+      </div>
+    <div class="intrude-less">
+        <header id="header" class="inner">
+            <a href="/" class="profilepic">
+                
+                    <img lazy-src="/img/head.jpg" class="js-avatar">
+                
+            </a>
+            <hgroup>
+              <h1 class="header-author"><a href="/" title="Me">UQqiang</a></h1>
+            </hgroup>
+            
+            <nav class="header-menu">
+                <ul>
+                
+                    <li><a href="/">博客首页</a></li>
+                
+                    <li><a href="/archives">所有文章</a></li>
+                
+                    <li><a href="/about">about Me</a></li>
+                
+                    <li><a href="/FrontEndGuide">前端导航</a></li>
+                
+                <div class="clearfix"></div>
+                </ul>
+            </nav>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a class="mail" target="_blank" href="mailto:646386477@qq.com" title="mail">mail</a>
+                    
+                        <a class="github" target="_blank" href="https://github.com/UQqiang" title="github">github</a>
+                    
+                        <a class="weibo" target="_blank" href="http://weibo.com" title="weibo">weibo</a>
+                    
+                        <a class="zhihu" target="_blank" href="#" title="zhihu">zhihu</a>
+                    
+                        <a class="google" target="_blank" href="#" title="google">google</a>
+                    
+                        <a class="twitter" target="_blank" href="#" title="twitter">twitter</a>
+                    
+                        <a class="linkedin" target="_blank" href="#" title="linkedin">linkedin</a>
+                    
+                        <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+                    
+                </div>
+            </nav>
+        </header>                
+    </div>
+</nav>
+      <div class="body-wrap"><article id="post-webpack搭建" class="article article-type-post" itemscope itemprop="blogPost">
+  
+    <div class="article-meta">
+      <a href="/2017/01/06/webpack搭建/" class="article-date">
+      <time datetime="2017-01-06T13:58:52.000Z" itemprop="datePublished">2017-01-06</time>
+</a>
+    </div>
+  
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      webpack
+    </h1>
+  
+
+      </header>
+      
+      <div class="article-info article-info-post">
+        
+    <div class="article-category tagcloud">
+    <a class="article-category-link" href="/categories/工具/">工具</a>
+    </div>
+
+
+        
+    <div class="article-tag tagcloud">
+        <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webpack/">webpack</a></li></ul>
+    </div>
+
+        <div class="clearfix"></div>
+      </div>
+      
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+          
+        <p>今天就回顾一下webpack的搭建，方便自己以后用起来顺手些。</p>
+<hr>
+<h2 id="引入webpack依赖"><a href="#引入webpack依赖" class="headerlink" title="引入webpack依赖"></a>引入webpack依赖</h2><h3 id="安装全局webpack"><a href="#安装全局webpack" class="headerlink" title=" 安装全局webpack"></a><strong> 安装全局webpack</strong></h3><p>在一个盘符中创建一个工程，（注意不要放在中文目录，以免不必要的麻烦）然后打开CMD，输入以下命令。</p>
+<a id="more"></a>
+<the rest="" of="" contents="" |="" 余下全文="">
+
+
+<p><code>npm install webpack -g</code></p>
+<h3 id="创建配置文件"><a href="#创建配置文件" class="headerlink" title=" 创建配置文件"></a><strong><em> 创建配置文件</em></strong></h3><p>在项目工程的根目录创建三个或多个webpack配置文件<br>    web.base.config.js  //公用的配置放在这里面<br>    web.develop.config.js  //开发环境中用到的配置文件<br>    web.publish.config.js   //生产环境中用到的配置文件</p>
+<h4 id="在develop中配置基本内容"><a href="#在develop中配置基本内容" class="headerlink" title=" 在develop中配置基本内容"></a><strong><em> 在develop中配置基本内容</em></strong></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">var path = require(&apos;path&apos;);</div><div class="line"></div><div class="line">module.exports = &#123;</div><div class="line">    entry:path.resolve(__dirname,&apos;src/js/app.js&apos;),//文件入口</div><div class="line">    output: &#123;                                     //输出文件配置信息</div><div class="line">        path: path.resolve(__dirname, &apos;deploy/js&apos;),</div><div class="line">        filename: &apos;bundle.js&apos;,</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>备注：这里说明一下，这里用到的时一种模块化的规范conmmonjs,第一行代码是导入，第三行是导出。</p>
+<h3 id="运行检错"><a href="#运行检错" class="headerlink" title=" 运行检错"></a><strong><em> 运行检错</em></strong></h3><p> 法一：在根目录运行webpack的命令，默认会去查找名称为webpack.config.js的文件执行，如果没有就会报配置信息没有配置的错误。。<br> 法二：还可以通过运行下面的命令进行要执行的配置文件的选择<br>    webpack –-config  web.develop.config.js</p>
+<p>。。。未完待续。。。（好吧，我承认我困得睁不开眼了，，睡觉去~）</p>
+<h2 id="把运行命令配置到npm的script中"><a href="#把运行命令配置到npm的script中" class="headerlink" title="把运行命令配置到npm的script中"></a>把运行命令配置到npm的script中</h2><p>这里要说明一下，因为webpack的命令会很长，所以需要配置一下，方便运行。</p>
+<h4 id="简单配置"><a href="#简单配置" class="headerlink" title=" 简单配置"></a><strong><em> 简单配置</em></strong></h4><p>具体操作是：</p>
+<pre><code>1. npm init ---------------&gt;会导出pakage.json
+2.这里需要安装webpack的局部变量：npm install webpack --save
+3.在pakeg.json中找到scripts，然后写:
+</code></pre><p><code>&#39;develop&#39; : &#39;webpack –-config web.develop.config.js&#39;</code><br>        4.测试运行：npm run develop</p>
+<h4 id="为发布目录启动服务"><a href="#为发布目录启动服务" class="headerlink" title=" 为发布目录启动服务"></a><strong><em> 为发布目录启动服务</em></strong></h4><p>在这里我摘抄一段，便于理解：</p>
+<blockquote>
+<p>如果需要一直输入 npm run develop 确实是一件非常无聊的事情，幸运的是，我们可以把让他安静的运行，让我们设置 webpack-dev-server<br>除了提供模块打包功能，Webpack还提供了一个基于Node.js Express框架的开发服务器，它是一个静态资源Web服务器，对于简单静态页面或者仅依赖于独立服务的前端页面，都可以直接使用这个开发服务器进行开 发。在开发过程中，开发服务器会监听每一个文件的变化，进行实时打包，并且可以推送通知前端页面代码发生了变化，从而可以实现页面的自动刷新。</p>
+</blockquote>
+<p>1.安装webpack-dev-server   <code>npm install webpack-dev-server --save</code><br>2.调整npm的<code>package.json scripts</code> 部分中开发命令的配置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">&quot;scripts&quot;: &#123;</div><div class="line">&quot;develop&quot;: &quot;webpack-dev-server  --config web.develop.config.js --devtool eval --progress --colors --hot --content-base src&quot;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>备注：<code>webpack-dev-server</code>  在 <code>localhost:8080</code> 建立一个 Web 服务器。<br>当你运行 <code>npm run develop</code>的时候，会启动一个Web服务器，然后监听文件修改，然后自动重新合并你的代码。真的非常简洁！</p>
+<h4 id="浏览器自动刷新"><a href="#浏览器自动刷新" class="headerlink" title=" 浏览器自动刷新"></a><strong><em> 浏览器自动刷新</em></strong></h4><p>在develop中的的入口文件前添加这两句：<br><code>&#39;webpack/hot/dev-server&#39;</code> <code>&#39;webpack-dev-server/client?http://localhost:8080&#39;,</code><br>如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module.exports = &#123;</div><div class="line">    entry:[</div><div class="line">        &apos;webpack/hot/dev-server&apos;,</div><div class="line">        &apos;webpack-dev-server/client?http://localhost:8080&apos;,</div><div class="line">        path.resolve(__dirname,&apos;src/js/app.js&apos;)</div><div class="line">    ]</div></pre></td></tr></table></figure></p>
+<h2 id="常用加载器介绍-类似gulp插件-—-gt-摘抄"><a href="#常用加载器介绍-类似gulp插件-—-gt-摘抄" class="headerlink" title="常用加载器介绍(类似gulp插件)—&gt;摘抄"></a>常用加载器介绍(类似gulp插件)—&gt;摘抄</h2><h3 id="Loader：这是webpack准备的一些预处理工具"><a href="#Loader：这是webpack准备的一些预处理工具" class="headerlink" title="Loader：这是webpack准备的一些预处理工具"></a>Loader：这是webpack准备的一些预处理工具</h3><p><strong> * 编译jsx和ES6到原生js（将es6转化成浏览器能识别的解析的es5）</strong></p>
+<h4 id="首先安装下面的所有依赖"><a href="#首先安装下面的所有依赖" class="headerlink" title="首先安装下面的所有依赖"></a>首先安装下面的所有依赖</h4><pre><code>npm install babel-loader --save-dev
+npm install babel-core babel-preset-es2015 babel-preset-react --save-dev
+</code></pre><h4 id="修改开发配置文件"><a href="#修改开发配置文件" class="headerlink" title="修改开发配置文件"></a>修改开发配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">    loaders: [</div><div class="line">        &#123;</div><div class="line">            test: /\.jsx?$/, // 用正则来匹配文件路径，这段意思是匹配 js 或者 jsx</div><div class="line">            loader: &apos;babel&apos;,// 加载模块 &quot;babel&quot; 是 &quot;babel-loader&quot; 的缩写</div><div class="line">            query: &#123;</div><div class="line">                presets: [&apos;es2015&apos;, &apos;react&apos;]</div><div class="line">            &#125;</div><div class="line">        &#125;</div><div class="line">    ]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title=" 使用"></a><strong> 使用</strong></h4><p>直接从新运行npm run develop即可</p>
+<h4 id="加载css"><a href="#加载css" class="headerlink" title="加载css"></a>加载css</h4><p>Webpack允许像加载任何代码一样加载 CSS。你可以选择你所需要的方式，但是你可以为每个组件把所有你的 CSS 加载到入口主文件中来做任何事情。<br>加载 CSS 需要 <code>css-loader</code>和 <code>style-loader</code>，他们做两件不同的事情，css-loader会遍历 CSS 文件，然后找到 url() 表达式然后处理他们，style-loader 会把原来的 CSS 代码插入页面中的一个 style 标签中。</p>
+<h4 id="首先下载依赖"><a href="#首先下载依赖" class="headerlink" title="首先下载依赖"></a>首先下载依赖</h4><pre><code>npm install css-loader style-loader --save-dev
+</code></pre><h4 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> 	test: /\.css$/, // Only .css files</div><div class="line">	loader: &apos;style!css&apos; // Run both loaders</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong> !用来定义loader的串联关系，”-loader”是可以省略不写的，多个loader之间用“!”连接起来</strong></p>
+<h4 id="Css加载策略"><a href="#Css加载策略" class="headerlink" title="Css加载策略"></a>Css加载策略</h4><p>在你的主入口文件中，比如 src/app.js 你可以为整个项目加载所有的 CSS<br>    Import  ‘./project-styles.css’;<br>CSS 就完全包含在合并的应用中，再也不需要重新下载。<br>懒加载（推荐）<br>如果你想发挥应用中多重入口文件的优势，你可以在每个入口点包含各自的 CSS。<br>你把你的模块用文件夹分离，每个文件夹有各自的 CSS 和 JavaScript 文件。再次，当应用发布的时候，导入的 CSS 已经加载到每个入口文件中。</p>
+<p>定制组件css<br>你可以根据这个策略为每个组件创建 CSS 文件，可以让组件名和 CSS 中的 class 使用一个命名空间，来避免一个组件中的一些 class 干扰到另外一些组件的 class。</p>
+<pre><code>使用内联样式取代 CSS 文件
+</code></pre><p>在 “React Native” 中你不再需要使用任何 CSS 文件，你只需要使用 style 属性，可以把你的 CSS 定义成一个对象，那样就可以根据你的项目重新来考略你的 CSS 策略。<br>注意：这点的样式都没有-</p>
+<h3 id="加载sass"><a href="#加载sass" class="headerlink" title="加载sass"></a>加载sass</h3><h4 id="下载依赖"><a href="#下载依赖" class="headerlink" title="下载依赖"></a>下载依赖</h4><pre><code>npm install sass-loader  --save-dev
+</code></pre><h4 id="修改配置文件-1"><a href="#修改配置文件-1" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line"> test: /\.scss$/,</div><div class="line"> loader: &apos;style!css!sass&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h3 id="图片处理"><a href="#图片处理" class="headerlink" title="图片处理"></a>图片处理</h3><p>直到 HTTP/2 你才能在应用加载的时候避免设置太多 HTTP 请求。根据浏览器不同你必须设置你的并行请求数，如果你在你的 CSS 中加载了太多图片的话，可以自动把这些图片转成 BASE64 字符串然后内联到 CSS 里来降低必要的请求数，这个方法取决与你的图片大小。你需要为你的应用平衡下载的大小和下载的数量，不过 Webpack 可以让这个平衡十分轻松适应。</p>
+<h4 id="下载依赖-1"><a href="#下载依赖-1" class="headerlink" title="下载依赖"></a>下载依赖</h4><pre><code>npm install url-loader --save-dev
+</code></pre><h4 id="修改配置文件-2"><a href="#修改配置文件-2" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.(png|jpg)$/,</div><div class="line">    loader: &apos;url?limit=25000&amp;name=images/[name].[ext]&apos;</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
+<p>加载器，它会把需要转换的路径变成 BASE64 字符串，在其他的 Webpack 书中提到的这方面会把你 CSS 中的 “url()” 像其他 require 或者 import 来处理。意味着如果我们可以通过它来处理我们的图片文件。<br>url-loader 传入的 limit 参数是告诉它图片如果不大于 25KB 的话要自动在它从属的 css 文件中转成 BASE64 字符串。</p>
+<h4 id="大图片处理"><a href="#大图片处理" class="headerlink" title="大图片处理"></a>大图片处理</h4><p>在代码中是一下情况：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">div.img&#123;</div><div class="line">    background: url(../image/xxx.jpg)</div><div class="line">&#125;</div><div class="line"></div><div class="line">//或者</div><div class="line">var img = document.createElement(&quot;img&quot;);</div><div class="line">img.src = require(&quot;../image/xxx.jpg&quot;);</div><div class="line">document.body.appendChild(img);</div></pre></td></tr></table></figure></p>
+<p>你可以这样配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">module: &#123;</div><div class="line">    &#123;</div><div class="line">      test: /\.(png|jpg)$/,</div><div class="line">      loader: &apos;url-loader?limit=10000&amp;name=build/[name].[ext]&apos;</div><div class="line">    &#125;]</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>针对上面的两种使用方式，loader可以自动识别并处理。根据loader中的设置，webpack会将小于指点大小的文件转化成 base64 格式的 dataUrl，其他图片会做适当的压缩并存放在指定目录中。</p>
+<h3 id="文件处理"><a href="#文件处理" class="headerlink" title="文件处理"></a>文件处理</h3><h4 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h4><p>现在webpack处理css中的图片还是可以的，但是处理html中的图片能力有限，所以有图片的地方最好放在css中，或者使用require的方式</p>
+<h4 id="下载依赖-2"><a href="#下载依赖-2" class="headerlink" title="下载依赖"></a>下载依赖</h4><pre><code>npm install file-loader –save-dev
+</code></pre><h4 id="修改配置文件-3"><a href="#修改配置文件-3" class="headerlink" title="修改配置文件"></a>修改配置文件</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.(png|jpeg|gif|jpg)$/,</div><div class="line">    loader: &apos;file-loader?name=images/[name].[ext]&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>注意：这点由于一直加载不上图片，所以我把输出的配置改为了<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">output: &#123;</div><div class="line">    path: path.resolve(__dirname, &apos;deploy&apos;),</div><div class="line">    filename: &apos;bundle.js&apos;,</div><div class="line">&#125;,</div></pre></td></tr></table></figure></p>
+<p>我把下面的loader注释了，影响图片的加载<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.(png|jpg)$/,</div><div class="line">    loader: &apos;url?limit=25000&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="内联fonts"><a href="#内联fonts" class="headerlink" title="内联fonts"></a>内联fonts</h3><p>字体实在是非常难引入正确，首先，通常我们有 4 种不一样的格式，但是只有其中一种会被对应的浏览器使用到。你肯定不会想引入全部四种格式，这样只会让 CSS 文件更加膨胀，然后又没办法优化。<br>取决与你的项目，你可能可以选择出一种字体格式，如果你不考略 Opera Mini，所有的浏览器都支持 .woff 和 .svg 格式。问题是不同格式下在各种浏览器下字体看起来会有一点点不同。所以测试 .woff 和 .svg，然后找出能够在所有浏览器中看起来最好的那个。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">&#123;</div><div class="line">    test: /\.woff$/,</div><div class="line">    loader: &apos;url?limit=100000&apos;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="常用插件介绍"><a href="#常用插件介绍" class="headerlink" title="常用插件介绍"></a>常用插件介绍</h2><p>webpack提供了[丰富的组件]用来满足不同的需求，当然我们也可以自行实现一个组件来满足自己的需求：<br>    plugins: [<br>         //your plugins list<br>     ]<br>详细的请看这里:<a href="http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin" target="_blank" rel="external">http://webpack.github.io/docs/list-of-plugins.html#uglifyjsplugin</a><br>注释：Word中出现的所有的包，都可以通过npm进行包查找，然后查看具体的使用方法。</p>
+<h3 id="压缩插件"><a href="#压缩插件" class="headerlink" title="压缩插件"></a>压缩插件</h3><p>这个插件是自带的</p>
+<h3 id="提取css插件"><a href="#提取css插件" class="headerlink" title="提取css插件"></a>提取css插件</h3><p>在webpack中编写js文件时，可以通过require的方式引入其他的静态资源，可通过loader对文件自动解析并打包文件。通常会将js 文件打包合并，css文件会在页面的header中嵌入style的方式载入页面。但开发过程中我们并不想将样式打在脚本中，最好可以独立生成css文件，以外链的形式加载。这时’extract-text-webpack-plugin’插件可以帮我们达到想要的效果。需要使用npm的方式加载插件，然后 参见下面的配置，就可以将js中的css文件提取，并以指定的文件名来进行加载。</p>
+<pre><code>npm install extract-text-webpack-plugin --save-dev
+</code></pre><p>我发现这个有一个问题，就是他只能把css抽出来，但是sass的样式不能分离出来。</p>
+<pre><code>var ExtractTextPlugin = require(&quot;extract-text-webpack-plugin&quot;);
+</code></pre><h3 id="分离css"><a href="#分离css" class="headerlink" title="分离css"></a>分离css</h3><pre><code>loader: ExtractTextPlugin.extract(&quot;style-loader&quot;, &quot;css-loader&quot;) 
+</code></pre><h3 id="分离scss"><a href="#分离scss" class="headerlink" title="分离scss"></a>分离scss</h3><pre><code>loader: ExtractTextPlugin.extract(&apos;style&apos;, &quot;css!sass&quot;)
+new ExtractTextPlugin(&quot;app.css&quot;)
+</code></pre><h3 id="合并配置文件插件"><a href="#合并配置文件插件" class="headerlink" title="合并配置文件插件"></a>合并配置文件插件</h3><pre><code>webpack-config
+https://github.com/mdreizin/webpack-config
+</code></pre><h3 id="创建index-Html页面插件"><a href="#创建index-Html页面插件" class="headerlink" title="创建index.Html页面插件"></a>创建index.Html页面插件</h3><pre><code>html-webpack-plugin
+npm install html-webpack-plugin --save-dev
+//引用模块
+var HtmlWebpackPlugin = require(&apos;html-webpack-plugin&apos;);
+// 配置生成index.html
+new HtmlWebpackPlugin({
+    title: &apos;Custom template using Handlebars&apos;,
+    template: &apos;./src/index.html&apos;
+})
+</code></pre><h3 id="自动打开浏览器插件"><a href="#自动打开浏览器插件" class="headerlink" title="自动打开浏览器插件"></a>自动打开浏览器插件</h3><pre><code>open-browser-webpack-plugin
+npm install --save-dev open-browser-webpack-plugin
+//引用模块
+var OpenBrowserPlugin = require(&apos;open-browser-webpack-plugin&apos;);
+//配置打开浏览器
+new OpenBrowserPlugin()
+</code></pre></the>
+      
+      
+        <div class="page-reward">
+          <p><a href="javascript:void(0)" onclick="dashangToggle()" class="dashang">赏</a></p>
+          <div class="hide_box"></div>
+          <div class="shang_box">
+            <a class="shang_close" href="javascript:void(0)" onclick="dashangToggle()">×</a>
+            <div class="shang_tit">
+              <p>纯属好玩</p>
+            </div>
+            <div class="shang_payimg">
+              <img src="/img/alipayimg.jpg" alt="扫码支持" title="扫一扫" />
+            </div>
+              <div class="pay_explain">扫码打赏，你说多少就多少</div>
+            <div class="shang_payselect">
+              
+                <div class="pay_item checked" data-id="alipay">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/alipay.png" alt="支付宝" /></span>
+                </div>
+              
+              
+                <div class="pay_item" data-id="wechat">
+                  <span class="radiobox"></span>
+                  <span class="pay_logo"><img src="/img/weixin.png" alt="微信" /></span>
+                </div>
+              
+            </div>
+            <div class="shang_info">
+              <p>打开<span id="shang_pay_txt">支付宝</span>扫一扫，即可进行扫码打赏哦</p>
+            </div>
+          </div>
+        </div>
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/zepto/1.2.0/zepto.min.js"></script>
+        <script type="text/javascript">
+          $(".pay_item").click(function(){
+            $(this).addClass('checked').siblings('.pay_item').removeClass('checked');
+            var dataid=$(this).attr('data-id');
+            $(".shang_payimg img").attr("src","/img/"+dataid+"img.jpg");
+            $("#shang_pay_txt").text(dataid=="alipay"?"支付宝":"微信");
+          });
+          function dashangToggle(){
+            
+            $(".hide_box").fadeToggle();
+            $(".shang_box").fadeToggle();
+          }
+        </script>
+      
+    </div>
+    
+  </div>
+  
+    
+    <div class="copyright">
+        <p><span>本文标题:</span><a href="/2017/01/06/webpack搭建/">webpack</a></p>
+        <p><span>文章作者:</span><a href="/" title="访问 UQqiang 的个人博客">UQqiang</a></p>
+        <p><span>发布时间:</span>2017年01月06日 - 21时58分</p>
+        <p><span>最后更新:</span>2017年10月20日 - 11时09分</p>
+        <p>
+            <span>原始链接:</span><a class="post-url" href="/2017/01/06/webpack搭建/" title="webpack">http://yoursite.com/2017/01/06/webpack搭建/</a>
+            <span class="copy-path" data-clipboard-text="原文: http://yoursite.com/2017/01/06/webpack搭建/　　作者: UQqiang" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
+            <script src="/js/clipboard.min.js"></script>
+            <script> var clipboard = new Clipboard('.copy-path'); </script>
+        </p>
+        <p>
+            <span>许可协议:</span><i class="fa fa-creative-commons"></i> <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/3.0/cn/" title="中国大陆 (CC BY-NC-SA 3.0 CN)" target = "_blank">"署名-非商用-相同方式共享 3.0"</a> 转载请保留原文链接及作者。
+        </p>
+    </div>
+
+
+
+<nav id="article-nav">
+  
+    <a href="/2017/01/14/jdk/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption"><</strong>
+      <div class="article-nav-title">
+        
+          关于安装jdk后没有javac文件的小结
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2016/12/09/jsonp/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JSONP</div>
+      <strong class="article-nav-caption">></strong>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+    <div id="toc" class="toc-article">
+    <strong class="toc-title">文章目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#引入webpack依赖"><span class="toc-number">1.</span> <span class="toc-text">引入webpack依赖</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安装全局webpack"><span class="toc-number">1.1.</span> <span class="toc-text"> 安装全局webpack</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建配置文件"><span class="toc-number">1.2.</span> <span class="toc-text"> 创建配置文件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#在develop中配置基本内容"><span class="toc-number">1.2.1.</span> <span class="toc-text"> 在develop中配置基本内容</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#运行检错"><span class="toc-number">1.3.</span> <span class="toc-text"> 运行检错</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#把运行命令配置到npm的script中"><span class="toc-number">2.</span> <span class="toc-text">把运行命令配置到npm的script中</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#简单配置"><span class="toc-number">2.0.1.</span> <span class="toc-text"> 简单配置</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#为发布目录启动服务"><span class="toc-number">2.0.2.</span> <span class="toc-text"> 为发布目录启动服务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#浏览器自动刷新"><span class="toc-number">2.0.3.</span> <span class="toc-text"> 浏览器自动刷新</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用加载器介绍-类似gulp插件-—-gt-摘抄"><span class="toc-number">3.</span> <span class="toc-text">常用加载器介绍(类似gulp插件)—>摘抄</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Loader：这是webpack准备的一些预处理工具"><span class="toc-number">3.1.</span> <span class="toc-text">Loader：这是webpack准备的一些预处理工具</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#首先安装下面的所有依赖"><span class="toc-number">3.1.1.</span> <span class="toc-text">首先安装下面的所有依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改开发配置文件"><span class="toc-number">3.1.2.</span> <span class="toc-text">修改开发配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#使用"><span class="toc-number">3.1.3.</span> <span class="toc-text"> 使用</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#加载css"><span class="toc-number">3.1.4.</span> <span class="toc-text">加载css</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#首先下载依赖"><span class="toc-number">3.1.5.</span> <span class="toc-text">首先下载依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改配置文件"><span class="toc-number">3.1.6.</span> <span class="toc-text">修改配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Css加载策略"><span class="toc-number">3.1.7.</span> <span class="toc-text">Css加载策略</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#加载sass"><span class="toc-number">3.2.</span> <span class="toc-text">加载sass</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#下载依赖"><span class="toc-number">3.2.1.</span> <span class="toc-text">下载依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改配置文件-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#图片处理"><span class="toc-number">3.3.</span> <span class="toc-text">图片处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#下载依赖-1"><span class="toc-number">3.3.1.</span> <span class="toc-text">下载依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改配置文件-2"><span class="toc-number">3.3.2.</span> <span class="toc-text">修改配置文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#大图片处理"><span class="toc-number">3.3.3.</span> <span class="toc-text">大图片处理</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#文件处理"><span class="toc-number">3.4.</span> <span class="toc-text">文件处理</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#说明"><span class="toc-number">3.4.1.</span> <span class="toc-text">说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#下载依赖-2"><span class="toc-number">3.4.2.</span> <span class="toc-text">下载依赖</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#修改配置文件-3"><span class="toc-number">3.4.3.</span> <span class="toc-text">修改配置文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#内联fonts"><span class="toc-number">3.5.</span> <span class="toc-text">内联fonts</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#常用插件介绍"><span class="toc-number">4.</span> <span class="toc-text">常用插件介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#压缩插件"><span class="toc-number">4.1.</span> <span class="toc-text">压缩插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#提取css插件"><span class="toc-number">4.2.</span> <span class="toc-text">提取css插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分离css"><span class="toc-number">4.3.</span> <span class="toc-text">分离css</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#分离scss"><span class="toc-number">4.4.</span> <span class="toc-text">分离scss</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#合并配置文件插件"><span class="toc-number">4.5.</span> <span class="toc-text">合并配置文件插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#创建index-Html页面插件"><span class="toc-number">4.6.</span> <span class="toc-text">创建index.Html页面插件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#自动打开浏览器插件"><span class="toc-number">4.7.</span> <span class="toc-text">自动打开浏览器插件</span></a></li></ol></li></ol>
+</div>
+<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
+
+<script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script>
+    var valueHide = "隐藏目录";
+    var valueShow = "显示目录";
+
+    if ($(".left-col").is(":hidden")) {
+        $("#tocButton").attr("value", valueShow);
+    }
+    $("#tocButton").click(function() {
+        if ($("#toc").is(":hidden")) {
+            $("#tocButton").attr("value", valueHide);
+            $("#toc").slideDown(320);
+        }
+        else {
+            $("#tocButton").attr("value", valueShow);
+            $("#toc").slideUp(350);
+        }
+    })
+    if ($(".toc").length < 1) {
+        $("#toc, #tocButton").hide();
+    }
+</script>
+
+
+
+
+
+<div class="bdsharebuttonbox">
+	<a href="#" class="fx fa-weibo bds_tsina" data-cmd="tsina" title="分享到新浪微博"></a>
+	<a href="#" class="fx fa-weixin bds_weixin" data-cmd="weixin" title="分享到微信"></a>
+	<a href="#" class="fx fa-qq bds_sqq" data-cmd="sqq" title="分享到QQ好友"></a>
+	<a href="#" class="fx fa-facebook-official bds_fbook" data-cmd="fbook" title="分享到Facebook"></a>
+	<a href="#" class="fx fa-twitter bds_twi" data-cmd="twi" title="分享到Twitter"></a>
+	<a href="#" class="fx fa-linkedin bds_linkedin" data-cmd="linkedin" title="分享到linkedin"></a>
+	<a href="#" class="fx fa-files-o bds_copy" data-cmd="copy" title="分享到复制网址"></a>
+</div>
+<script>window._bd_share_config={"common":{"bdSnsKey":{},"bdText":"","bdMini":"2","bdMiniList":false,"bdPic":"","bdStyle":"2","bdSize":"24"},"share":{}};with(document)0[(getElementsByTagName('head')[0]||body).appendChild(createElement('script')).src='/static/api/js/share.js?v=89860593.js?cdnversion='+~(-new Date()/36e5)];</script>
+
+
+
+
+    
+        <div id="gitments"></div>
+<script src="/js/gitment.browser.js"></script>
+<script>
+    var gitment = new Gitment({
+      id: window.location.pathname,
+      owner: 'UQqiang',
+      repo: 'uqqiang.github.io',
+      oauth: {
+        client_id: '',
+        client_secret: '',
+      },
+    })
+    gitment.render('gitments')
+</script>
+    
+
+
+
+    <div class="scroll" id="post-nav-button">
+        
+            <a href="/2017/01/14/jdk/" title="上一篇: 关于安装jdk后没有javac文件的小结">
+                <i class="fa fa-angle-left"></i>
+            </a>
+        
+        <a title="文章列表"><i class="fa fa-bars"></i><i class="fa fa-times"></i></a>
+        
+            <a href="/2016/12/09/jsonp/" title="下一篇: JSONP">
+                <i class="fa fa-angle-right"></i>
+            </a>
+        
+    </div>
+    <ul class="post-list"><li class="post-list-item"><a class="post-list-link" href="/2017/01/14/jdk/">关于安装jdk后没有javac文件的小结</a></li><li class="post-list-item"><a class="post-list-link" href="/2017/01/06/webpack搭建/">webpack</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/12/09/jsonp/">JSONP</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/21/jQ中的集合/">jQ中的集合</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/15/逻辑运算符/">JS逻辑运算符&&与||的短路运算</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/angularjs中的transclude及ng-transclude指令/">transclude及ng-transclude</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/08/前端工具/">前端工具小总结</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/11/02/键盘事件/">键盘事件</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/22/面向对象/">面向对象</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/10/06/js基础1/">js基础</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/27/CSS3/">2D 3D 动画</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/25/Elements/">Elements</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/24/gulp搭建/">gulp搭建</a></li><li class="post-list-item"><a class="post-list-link" href="/2016/09/22/node安装/">node安装</a></li></ul>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+    <script>
+        $(".post-list").addClass("toc-article");
+        $(".post-list-item a").attr("target","_blank");
+        $("#post-nav-button > a:nth-child(2)").click(function() {
+            $(".fa-bars, .fa-times").toggle();
+            $(".post-list").toggle(300);
+            if ($(".toc").length > 0) {
+                $("#toc, #tocButton").toggle(200, function() {
+                    if ($(".switch-area").is(":visible")) {
+                        $("#tocButton").attr("value", valueHide);
+                        }
+                    })
+            }
+            else {
+            }
+        })
+    </script>
+
+
+
+    <script>
+        
+    </script>
+</div>
+      <footer id="footer">
+    <div class="outer">
+        <div id="footer-info">
+            <div class="footer-left">
+                &copy; 2017 UQqiang
+            </div>
+            <div class="footer-right">
+                <a href="http://hexo.io/" target="_blank">Hexo</a>  Theme <a href="https://github.com/luuman/hexo-theme-spfk" target="_blank">spfk</a> by luuman
+            </div>
+        </div>
+        
+            <div class="visit">
+                
+                    <span id="busuanzi_container_site_pv" style='display:none'>
+                        <span id="site-visit" >海贼到访数: 
+                            <span id="busuanzi_value_site_uv"></span>
+                        </span>
+                    </span>
+                
+                
+                    <span>, </span>
+                
+                
+                    <span id="busuanzi_container_page_pv" style='display:none'>
+                        <span id="page-visit">本页阅读量: 
+                            <span id="busuanzi_value_page_pv"></span>
+                        </span>
+                    </span>
+                
+            </div>
+        
+    </div>
+</footer>
+
+    </div>
+    <script src="https://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js"></script>
+<script src="/js/main.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            var backgroundnum = 24;
+            var backgroundimg = "url(/background/bg-x.jpg)".replace(/x/gi, Math.ceil(Math.random() * backgroundnum));
+            $("#mobile-nav").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+            $(".left-col").css({"background-image": backgroundimg,"background-size": "cover","background-position": "center"});
+        })
+    </script>
+
+
+
+
+
+<div class="scroll" id="scroll">
+    <a href="#"><i class="fa fa-arrow-up"></i></a>
+    <a href="#comments"><i class="fa fa-comments-o"></i></a>
+    <a href="#footer"><i class="fa fa-arrow-down"></i></a>
+</div>
+<script>
+    $(document).ready(function() {
+        if ($("#comments").length < 1) {
+            $("#scroll > a:nth-child(2)").hide();
+        };
+    })
+</script>
+
+<script async src="https://dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js">
+</script>
+
+  <script language="javascript">
+    $(function() {
+        $("a[title]").each(function() {
+            var a = $(this);
+            var title = a.attr('title');
+            if (title == undefined || title == "") return;
+            a.data('title', title).removeAttr('title').hover(
+
+            function() {
+                var offset = a.offset();
+                $("<div id=\"anchortitlecontainer\"></div>").appendTo($("body")).html(title).css({
+                    top: offset.top - a.outerHeight() - 15,
+                    left: offset.left + a.outerWidth()/2 + 1
+                }).fadeIn(function() {
+                    var pop = $(this);
+                    setTimeout(function() {
+                        pop.remove();
+                    }, pop.text().length * 800);
+                });
+            }, function() {
+                $("#anchortitlecontainer").remove();
+            });
+        });
+    });
+</script>
+
+
+    <script type="text/javascript">
+      window.onload = function(){
+        document.getElementById("search").onclick = function(){
+            console.log("search")
+            search();
+        }
+      }
+      function search(){
+        (function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+        (w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+        e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+        })(window,document,'script','//s.swiftypecdn.com/install/v2/st.js','_st');
+
+        _st('install','A1Pz-LKMXbrzcFg2FWi6','2.0.0');
+      }
+    </script>
+
+  </div>
+</body>
+</html>
